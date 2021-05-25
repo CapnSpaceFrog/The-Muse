@@ -22,9 +22,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Attack",
+                    "name": "Primary Attack",
                     "type": "Button",
                     "id": "0d521ddd-8c3f-4490-bee3-bbb2bd8bab57",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Secondary Attack",
+                    "type": "Button",
+                    "id": "8a003ba3-724c-4c08-a39e-ab0d1df2ab26",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -104,18 +112,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack",
+                    "action": "Primary Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "65859c76-4f5e-45c2-a452-672f85e407e8",
+                    "id": "fbc914fd-0847-43c8-80fd-dfac0227a79d",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack",
+                    "action": "Secondary Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
