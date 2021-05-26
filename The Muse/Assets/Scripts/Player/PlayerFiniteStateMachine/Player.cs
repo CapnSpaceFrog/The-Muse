@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public Animator Anim { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
     public Rigidbody2D RB { get; private set; }
+    public PlayerInventory Inventory { get; private set; }
     #endregion
 
     #region Check Transforms
@@ -58,7 +59,12 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
+        Inventory = GetComponent<PlayerInventory>();
+
         FacingDirection = 1;
+
+        PrimaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.primary]);
+        //SecondaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.secondary]);
 
         StateMachine.Initialize(IdleState);
     }
