@@ -1,67 +1,67 @@
 fileFormatVersion: 2
-guid: 36add4295ca451b448ed945cd54904b7
+guid: b6e820fc94245274cb98d04fd827dbd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5357303059329522002
-    second: BearChargeAni_0
+      213: -897045778245262998
+    second: BearCharge_0
   - first:
-      213: 7782660982517555178
-    second: BearChargeAni_1
+      213: 6572884697959815329
+    second: BearCharge_1
   - first:
-      213: 8737333281953235720
-    second: BearChargeAni_2
+      213: 3432751265866677449
+    second: BearCharge_2
   - first:
-      213: 1566607871876547136
-    second: BearChargeAni_3
+      213: -4714112311923493771
+    second: BearCharge_3
   - first:
-      213: -6456621666636752375
-    second: BearChargeAni_4
+      213: 8192051031449532417
+    second: BearCharge_4
   - first:
-      213: 9082073670066964580
-    second: BearChargeAni_5
+      213: -943634341397657366
+    second: BearCharge_5
   - first:
-      213: 5307167471380228028
-    second: BearChargeAni_6
+      213: -4338534025999831612
+    second: BearCharge_6
   - first:
-      213: -4524863954039036528
-    second: BearChargeAni_7
+      213: -6522958899974988638
+    second: BearCharge_7
   - first:
-      213: -9107265217031180522
-    second: BearChargeAni_8
+      213: 2974331050506620022
+    second: BearCharge_8
   - first:
-      213: -397846711051548384
-    second: BearChargeAni_9
+      213: 2121419666563387680
+    second: BearCharge_9
   - first:
-      213: 1411704589662981496
-    second: BearChargeAni_10
+      213: 3006866665013506451
+    second: BearCharge_10
   - first:
-      213: 543963889434444538
-    second: BearChargeAni_11
+      213: 3656284260538157379
+    second: BearCharge_11
   - first:
-      213: -7392252498909466213
-    second: BearChargeAni_12
+      213: 6927533601586258620
+    second: BearCharge_12
   - first:
-      213: -3586418532843354850
-    second: BearChargeAni_13
+      213: -2690281524778163566
+    second: BearCharge_13
   - first:
-      213: 3570132859165459649
-    second: BearChargeAni_14
+      213: 2514437526203890815
+    second: BearCharge_14
   - first:
-      213: 6337523411470960479
-    second: BearChargeAni_15
+      213: -2741172074781534582
+    second: BearCharge_15
   - first:
-      213: -5246942611161711068
-    second: BearChargeAni_16
+      213: 8264323229424030688
+    second: BearCharge_16
   - first:
-      213: -4186443764675616083
-    second: BearChargeAni_17
+      213: 2644537431021328238
+    second: BearCharge_17
   - first:
-      213: 5222111001654507271
-    second: BearChargeAni_18
+      213: -803751044946161290
+    second: BearCharge_18
   - first:
-      213: 1844600463234161112
-    second: BearChargeAni_19
+      213: 1568148322370947027
+    second: BearCharge_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +125,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -137,7 +137,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -149,7 +149,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -163,7 +163,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BearChargeAni_0
+      name: BearCharge_0
       rect:
         serializedVersion: 2
         x: 0
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea6ec82704907a5b0800000000000000
-      internalID: -5357303059329522002
+      spriteID: a616d601e9d0d83f0800000000000000
+      internalID: -897045778245262998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_1
+      name: BearCharge_1
       rect:
         serializedVersion: 2
         x: 128
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aef5046ede0910c60800000000000000
-      internalID: 7782660982517555178
+      spriteID: 1a8de73eec3973b50800000000000000
+      internalID: 6572884697959815329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_2
+      name: BearCharge_2
       rect:
         serializedVersion: 2
         x: 256
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 803450bd35e314970800000000000000
-      internalID: 8737333281953235720
+      spriteID: 9cc714cb61593af20800000000000000
+      internalID: 3432751265866677449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_3
+      name: BearCharge_3
       rect:
         serializedVersion: 2
         x: 384
@@ -240,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04248892f85bdb510800000000000000
-      internalID: 1566607871876547136
+      spriteID: 574318824db149eb0800000000000000
+      internalID: -4714112311923493771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_4
+      name: BearCharge_4
       rect:
         serializedVersion: 2
         x: 512
@@ -261,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a96078dc87566a0800000000000000
-      internalID: -6456621666636752375
+      spriteID: 108fb6f720300b170800000000000000
+      internalID: 8192051031449532417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_5
+      name: BearCharge_5
       rect:
         serializedVersion: 2
         x: 640
@@ -282,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 468054052e10a0e70800000000000000
-      internalID: 9082073670066964580
+      spriteID: ae8022be09987e2f0800000000000000
+      internalID: -943634341397657366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_6
+      name: BearCharge_6
       rect:
         serializedVersion: 2
         x: 768
@@ -303,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb7602752b8d6a940800000000000000
-      internalID: 5307167471380228028
+      spriteID: 4cda5563a4e6ac3c0800000000000000
+      internalID: -4338534025999831612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_7
+      name: BearCharge_7
       rect:
         serializedVersion: 2
         x: 896
@@ -324,14 +324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 095a88225347431c0800000000000000
-      internalID: -4524863954039036528
+      spriteID: 2ac948ac07bc975a0800000000000000
+      internalID: -6522958899974988638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_8
+      name: BearCharge_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -345,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61fe597998e7c9180800000000000000
-      internalID: -9107265217031180522
+      spriteID: 67c8cdde452f64920800000000000000
+      internalID: 2974331050506620022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_9
+      name: BearCharge_9
       rect:
         serializedVersion: 2
         x: 1152
@@ -366,14 +366,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02907b036809a7af0800000000000000
-      internalID: -397846711051548384
+      spriteID: 021d90d62fbc07d10800000000000000
+      internalID: 2121419666563387680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_10
+      name: BearCharge_10
       rect:
         serializedVersion: 2
         x: 1280
@@ -387,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87d86a248d1679310800000000000000
-      internalID: 1411704589662981496
+      spriteID: 391f71ffc498ab920800000000000000
+      internalID: 3006866665013506451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_11
+      name: BearCharge_11
       rect:
         serializedVersion: 2
         x: 1408
@@ -408,14 +408,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af24160864c8c8700800000000000000
-      internalID: 543963889434444538
+      spriteID: 3498a33c92bbdb230800000000000000
+      internalID: 3656284260538157379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_12
+      name: BearCharge_12
       rect:
         serializedVersion: 2
         x: 1536
@@ -429,14 +429,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b91f180a481796990800000000000000
-      internalID: -7392252498909466213
+      spriteID: cb2a1246b1b832060800000000000000
+      internalID: 6927533601586258620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_13
+      name: BearCharge_13
       rect:
         serializedVersion: 2
         x: 1664
@@ -450,14 +450,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e158ef5985b7a3ec0800000000000000
-      internalID: -3586418532843354850
+      spriteID: 2922dc9f4333aaad0800000000000000
+      internalID: -2690281524778163566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_14
+      name: BearCharge_14
       rect:
         serializedVersion: 2
         x: 1792
@@ -471,14 +471,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c4c1878be8ab8130800000000000000
-      internalID: 3570132859165459649
+      spriteID: f7c7b47ab9315e220800000000000000
+      internalID: 2514437526203890815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_15
+      name: BearCharge_15
       rect:
         serializedVersion: 2
         x: 1920
@@ -492,14 +492,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f57c27017f763f750800000000000000
-      internalID: 6337523411470960479
+      spriteID: a861d66758665f9d0800000000000000
+      internalID: -2741172074781534582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_16
+      name: BearCharge_16
       rect:
         serializedVersion: 2
         x: 2048
@@ -513,14 +513,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42e78d0ae7d1f27b0800000000000000
-      internalID: -5246942611161711068
+      spriteID: 0e314ded036c0b270800000000000000
+      internalID: 8264323229424030688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_17
+      name: BearCharge_17
       rect:
         serializedVersion: 2
         x: 2176
@@ -534,14 +534,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da26c56a393c6e5c0800000000000000
-      internalID: -4186443764675616083
+      spriteID: e67104b38c843b420800000000000000
+      internalID: 2644537431021328238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_18
+      name: BearCharge_18
       rect:
         serializedVersion: 2
         x: 2304
@@ -555,14 +555,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 707b64fb94aa87840800000000000000
-      internalID: 5222111001654507271
+      spriteID: 671922edea088d4f0800000000000000
+      internalID: -803751044946161290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BearChargeAni_19
+      name: BearCharge_19
       rect:
         serializedVersion: 2
         x: 2432
@@ -576,8 +576,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9d7932956599910800000000000000
-      internalID: 1844600463234161112
+      spriteID: 3d78b0e379e23c510800000000000000
+      internalID: 1568148322370947027
       vertices: []
       indices: 
       edges: []

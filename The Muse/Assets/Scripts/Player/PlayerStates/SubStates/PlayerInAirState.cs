@@ -14,6 +14,7 @@ public class PlayerInAirState : PlayerState
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
+
     public override void DoChecks()
     {
         base.DoChecks();
@@ -43,13 +44,9 @@ public class PlayerInAirState : PlayerState
 
         CheckJumpMultiplier();
 
-        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
+        if (player.tookDamage)
         {
-            stateMachine.ChangeState(player.PrimaryAttackState);
-        }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
-        {
-            stateMachine.ChangeState(player.SecondaryAttackState);
+            stateMachine.ChangeState(player.KnockbackState);
         }
         else if (isGrounded && player.CurrentVelocity.y < 0.01f)
         {

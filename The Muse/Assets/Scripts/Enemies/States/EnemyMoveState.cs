@@ -34,6 +34,11 @@ public class EnemyMoveState : EnemyState
         {
             enemy.Flip();
         }
+
+        if (enemy.tookDamage)
+        {
+            stateMachine.ChangeState(enemy.KnockbackState);
+        }
     }
 
     public override void PhysicsUpdate()

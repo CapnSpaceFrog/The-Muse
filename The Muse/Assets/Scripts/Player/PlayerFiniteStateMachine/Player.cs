@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
     public PlayerLandState LandState { get; private set; }
     public PlayerAttackState PrimaryAttackState { get; private set; }
     public PlayerAttackState SecondaryAttackState { get; private set; }
+    public PlayerKnockbackState KnockbackState { get; private set; }
 
-    [SerializeField]
-    private PlayerData playerData;
+    public PlayerData playerData;
     #endregion
 
     #region Components
@@ -27,17 +27,18 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Check Transforms
-
     [SerializeField]
     private Transform groundCheck;
-
     #endregion
 
     #region Other Variables
+    public float[] damageDetails = new float[3];
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
 
     private Vector2 workspace;
+
+    public bool tookDamage { get; set; }
     #endregion
 
     #region Unity Callback Functions
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
+        KnockbackState = new PlayerKnockbackState(this, StateMachine, playerData, "knockback");
         PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
         SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
     }
@@ -71,7 +73,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(CurrentVelocity);
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
     }
@@ -117,6 +118,18 @@ public class Player : MonoBehaviour
         if (xInput != 0 && xInput != FacingDirection)
         {
             Flip();
+        }
+    }
+
+    public void TookDamage(float[] attackDetails)
+    {
+        damageDetails[0] = attackDetails[0];
+        damageDetails[1] = attackDetails[1];
+        damageDetails[2] = attackDetails[2];
+
+        if (KnockbackState.CanTakeDamage)
+        {
+            tookDamage = true;
         }
     }
     #endregion

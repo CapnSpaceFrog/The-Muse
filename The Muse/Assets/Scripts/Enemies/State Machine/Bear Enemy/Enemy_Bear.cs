@@ -47,11 +47,11 @@ public class Enemy_Bear : Enemy
     }
     #endregion
 
-    private void OnDrawGizmos()
+    protected override void OnDrawGizmos()
     {
+        base.OnDrawGizmos();
+
         Gizmos.DrawRay(playerCheck.position, gameObject.transform.right * StateData.PlayerCheckDistanceMin);
         Gizmos.DrawRay(playerCheck.position, gameObject.transform.right * StateData.PlayerCheckDistanceMax);
-        Gizmos.DrawRay(ledgeCheck.position, Vector2.down * StateData.LedgeCheckDistance);
-        Gizmos.DrawRay(wallCheck.position, gameObject.transform.right * StateData.WallCheckDistance);
     }
 }
