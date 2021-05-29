@@ -10,6 +10,13 @@ public class PlayerAttackState : PlayerAbilityState
     {
     }
 
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        player.SetVelocityZero();
+    }
+
     public override void Enter()
     {
         base.Enter();

@@ -33,6 +33,11 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public virtual void InsantiateProjectile()
+    {
+
+    }
+
     #region Animation Triggers
 
     public virtual void AnimationFinishTrigger()

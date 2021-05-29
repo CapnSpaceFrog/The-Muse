@@ -12,6 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
+    public bool DashInput { get; private set; }
     public bool[] AttackInputs { get; private set; }
 
     [SerializeField]
@@ -62,6 +63,16 @@ public class PlayerInputHandler : MonoBehaviour
             JumpInput = false;
         }
     }
+
+    public void OnDashInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            DashInput = true;
+        }
+    }
+
+    public void UseDashInput() => DashInput = false;
 
     public void OnPrimaryAttackInput(InputAction.CallbackContext context)
     {

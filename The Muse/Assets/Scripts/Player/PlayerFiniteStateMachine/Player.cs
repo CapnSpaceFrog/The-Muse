@@ -61,19 +61,19 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         Inventory = GetComponent<PlayerInventory>();
 
-        FacingDirection = 1;
+        FacingDirection = -1;
 
         PrimaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.primary]);
-        //SecondaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.secondary]);
+        SecondaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.secondary]);
 
         StateMachine.Initialize(IdleState);
     }
 
     private void Update()
     {
+        Debug.Log(CurrentVelocity);
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
-        Debug.Log("Jump Input Stop: " + InputHandler.JumpInputStop);
     }
 
     private void FixedUpdate()
@@ -93,6 +93,13 @@ public class Player : MonoBehaviour
     public void SetVelocityY(float velocity)
     {
         workspace.Set(CurrentVelocity.x, velocity);
+        RB.velocity = workspace;
+        CurrentVelocity = workspace;
+    }
+
+    public void SetVelocityZero()
+    {
+        workspace.Set(0, 0);
         RB.velocity = workspace;
         CurrentVelocity = workspace;
     }

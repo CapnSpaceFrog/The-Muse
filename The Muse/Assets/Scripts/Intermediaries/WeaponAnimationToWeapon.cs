@@ -15,4 +15,9 @@ public class WeaponAnimationToWeapon : MonoBehaviour
     {
         weapon.AnimationFinishTrigger();
     }
+
+    private void InsantiateProjectile()
+    {
+        weapon.InsantiateProjectile();
+    }
 }
