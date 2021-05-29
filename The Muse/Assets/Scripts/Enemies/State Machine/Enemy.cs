@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enemyData StateData { get; private set; }
+    public enemyData StateData;
     public EnemyStateMachine StateMachine { get; private set; }
-    public EnemyMoveState MoveState { get; private set; }
-    public EnemyKnockbackState KnockbackState { get; private set; }
 
     public Rigidbody2D RB { get; private set; }
     public Animator Anim { get; private set; }
@@ -17,8 +15,10 @@ public class Enemy : MonoBehaviour
     protected Vector2 hitBoxBotLeft;
     protected Vector2 hitBoxTopRight;
 
+    public int currentHealth { get; private set; }
+
     private float[] attackDetails = new float[3];
-    public float[] damageDetails = new float[3];
+    public float[] damageDetails = new float[2];
 
     public bool tookDamage;
 
@@ -37,15 +37,13 @@ public class Enemy : MonoBehaviour
         Anim = GetComponent<Animator>();
 
         StateMachine = new EnemyStateMachine();
-        MoveState = new EnemyMoveState(this, StateMachine, StateData, "move");
-        KnockbackState = new EnemyKnockbackState(this, StateMachine, StateData, "knockback");
     }
 
     public virtual void Start()
     {
         FacingDirection = 1;
 
-        StateMachine.Initialize(MoveState);
+        currentHealth = StateData.MaxHealth;
     }
 
     public virtual void Update()
@@ -55,6 +53,7 @@ public class Enemy : MonoBehaviour
         TouchDamageBox();
 
         StateMachine.currentState.LogicUpdate();
+        Debug.Log(StateMachine.currentState);
     }
 
     public virtual void FixedUpdate()
@@ -83,6 +82,15 @@ public class Enemy : MonoBehaviour
         RB.velocity = workspace;
         CurrentVelocity = workspace;
     }
+
+    public void UpdateHealth(float damageToTake)
+    {
+        currentHealth -= (int) damageToTake;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     #endregion
 
     #region Check Functions
@@ -108,19 +116,15 @@ public class Enemy : MonoBehaviour
             attackDetails[0] = StateData.TouchDamage;
             attackDetails[1] = transform.position.x;
             attackDetails[2] = StateData.KnockbackForce;
-            hit.SendMessage("TookDamage", attackDetails);
+            hit.SendMessage("TakeDamage", attackDetails);
         }
     }
 
-    public void TookDamage(float[] attackDetails)
+    public virtual void Damage(float[] attackDetails)
     {
         damageDetails[0] = attackDetails[0];
         damageDetails[1] = attackDetails[1];
-
-        if (KnockbackState.CanTakeDamage)
-        {
-            tookDamage = true;
-        }
+        Debug.Log("hit enemy");
     }
     #endregion
 

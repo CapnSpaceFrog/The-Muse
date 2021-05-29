@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPlayerDetectedState : EnemyState
+public class BearDetectedPlayerState : EnemyState
 {
     protected Enemy_Bear bear;
 
     private bool detectedPlayerMin;
     
-    public EnemyPlayerDetectedState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_Bear bear) : base(enemy, stateMachine, stateData, animBoolName)
+    public BearDetectedPlayerState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_Bear bear) : base(enemy, stateMachine, stateData, animBoolName)
     {
         this.bear = bear;
     }
@@ -29,9 +29,13 @@ public class EnemyPlayerDetectedState : EnemyState
 
         bear.SetVelocityX(stateData.ChargeSpeed * enemy.FacingDirection);
 
-        if (!bear.DetectPlayerMax())
+        if (bear.tookDamage)
         {
-            stateMachine.ChangeState(bear.BearMoveState);
+            stateMachine.ChangeState(bear.KnockbackState);
+        }
+        else if (!bear.DetectPlayerMax())
+        {
+            stateMachine.ChangeState(bear.MoveState);
         }
     }
 

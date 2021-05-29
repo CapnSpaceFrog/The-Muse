@@ -41,7 +41,6 @@ public class PlayerKnockbackState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log(DecliningVelocity());
 
         if (Time.time < startTime + (playerData.knockbackTimer * player.damageDetails[2]))
         {
@@ -56,7 +55,7 @@ public class PlayerKnockbackState : PlayerState
     public float DecliningVelocity()
     {
         float workspace;
-        workspace = (playerData.knockbackVelocityX * direction) * player.damageDetails[2];
+        workspace = (playerData.knockbackVelocityX * direction * player.damageDetails[2]);
         workspace -= Time.deltaTime;
 
         return workspace;

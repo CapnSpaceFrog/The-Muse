@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2ce5a67b1ecb74582feb0101071ae8, type: 3}
   m_Name: playerData
   m_EditorClassIdentifier: 
+  MaxHealth: 10
+  LyreDamage: 2
+  SpellDamage: 3
   movementVelocity: 5.75
   jumpVelocity: 15
   amountOfJumps: 1
   coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.5
-  knockbackVelocityY: 8.25
-  knockbackVelocityX: 10.12
+  knockbackVelocityY: 7.25
+  knockbackVelocityX: 8.85
   knockbackTimer: 0.35
+  test: 0
   groundCheckRadius: 0.25
   whatIsGround:
     serializedVersion: 2

@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: Boar Data
   m_EditorClassIdentifier: 
-  HitBoxHeight: 0.85
-  HitBoxWidth: 1.49
+  MaxHealth: 4
+  HitBoxHeight: 0.83
+  HitBoxWidth: 1.56
   TouchDamage: 1
-  KnockbackForce: 0.85
-  MoveSpeed: 2.85
+  KnockbackForce: 1.25
+  KnockbackTimer: 0.35
+  KnockbackForceX: 3.23
+  KnockbackForceY: 1.45
+  MoveSpeed: 3
   ChargeSpeed: 6
-  WallCheckDistance: 0.1
-  LedgeCheckDistance: 0.14
+  WallCheckDistance: 0.24
+  LedgeCheckDistance: 0.15
   PlayerCheckDistanceMin: 0
   PlayerCheckDistanceMax: 0
   whatIsGround:

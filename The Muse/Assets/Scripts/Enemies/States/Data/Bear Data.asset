@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: Bear Data
   m_EditorClassIdentifier: 
+  MaxHealth: 16
   HitBoxHeight: 1.83
   HitBoxWidth: 2.87
   TouchDamage: 2
   KnockbackForce: 1.5
-  MoveSpeed: 3
-  ChargeSpeed: 6
+  KnockbackTimer: 0.23
+  KnockbackForceX: 4.15
+  KnockbackForceY: 1.25
+  MoveSpeed: 4
+  ChargeSpeed: 8
   WallCheckDistance: 0.84
-  LedgeCheckDistance: 0.24
+  LedgeCheckDistance: 0.57
   PlayerCheckDistanceMin: 6.45
   PlayerCheckDistanceMax: 15.45
   whatIsGround:

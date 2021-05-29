@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnemyKnockbackState : EnemyState
 {
-    public bool CanTakeDamage;
+    public bool CanTakeDamage = true;
+
+    private bool shouldFlip;
+
+    private int direction;
 
     public EnemyKnockbackState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName) : base(enemy, stateMachine, stateData, animBoolName)
     {
@@ -14,6 +18,24 @@ public class EnemyKnockbackState : EnemyState
     {
         base.Enter();
 
+        if (enemy.damageDetails[1] < enemy.transform.position.x)
+        {
+            direction = 1;
+            if (enemy.FacingDirection != -1)
+            {
+                shouldFlip = true;
+            }
+        }
+        else
+        {
+            direction = -1;
+            if (enemy.FacingDirection != 1)
+            {
+                shouldFlip = true;
+            }
+        }
+
+        enemy.UpdateHealth(enemy.damageDetails[0]);
         enemy.SetVelocityZero();
         enemy.SetVelocityY(stateData.KnockbackForceY * stateData.KnockbackForce);
 
@@ -24,27 +46,21 @@ public class EnemyKnockbackState : EnemyState
     {
         base.Exit();
 
+        enemy.SetVelocityZero();
         enemy.tookDamage = false;
         CanTakeDamage = true;
-    }
 
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-
-        if (Time.time < stateStartTime + (stateData.KnockbackTimer * stateData.KnockbackForce))
+        if (shouldFlip)
         {
-            enemy.SetVelocityX(DecliningVelocity());
-        }
-        else
-        {
-            stateMachine.ChangeState(enemy.MoveState);
+            enemy.Flip();
+            shouldFlip = false;
         }
     }
+
     public float DecliningVelocity()
     {
         float workspace;
-        workspace = (stateData.KnockbackForceX * enemy.FacingDirection) * stateData.KnockbackForce;
+        workspace = (stateData.KnockbackForceX * direction) * stateData.KnockbackForce;
         workspace -= Time.deltaTime;
 
         return workspace;

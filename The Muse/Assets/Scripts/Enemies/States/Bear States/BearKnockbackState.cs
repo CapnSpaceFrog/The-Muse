@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearMoveState : EnemyMoveState
+public class BearKnockbackState : EnemyKnockbackState
 {
     private Enemy_Bear bear;
-
-    public BearMoveState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_Bear bear) : base(enemy, stateMachine, stateData, animBoolName)
+    public BearKnockbackState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_Bear bear) : base(enemy, stateMachine, stateData, animBoolName)
     {
         this.bear = bear;
     }
@@ -25,13 +24,17 @@ public class BearMoveState : EnemyMoveState
     {
         base.LogicUpdate();
 
-        if (bear.DetectPlayerMin())
+        if (Time.time < stateStartTime + (stateData.KnockbackTimer * stateData.KnockbackForce))
+        {
+            enemy.SetVelocityX(DecliningVelocity());
+        }
+        else if (bear.DetectPlayerMin())
         {
             stateMachine.ChangeState(bear.DetectedState);
         }
-        else if (bear.tookDamage)
+        else
         {
-            stateMachine.ChangeState(bear.KnockbackState);
+            stateMachine.ChangeState(bear.MoveState);
         }
     }
 

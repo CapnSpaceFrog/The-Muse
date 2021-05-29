@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy_Bear : Enemy
 {
-    public EnemyPlayerDetectedState DetectedState { get; private set; }
-    public BearMoveState BearMoveState { get; private set; }
+    public BearDetectedPlayerState DetectedState { get; private set; }
+    public BearMoveState MoveState { get; private set; }
+    public BearKnockbackState KnockbackState { get; private set; }
 
     [SerializeField]
     private Transform playerCheck;
@@ -14,15 +15,16 @@ public class Enemy_Bear : Enemy
     {
         base.Awake();
 
-        BearMoveState = new BearMoveState(this, StateMachine, StateData, "move", this);
-        DetectedState = new EnemyPlayerDetectedState(this, StateMachine, StateData, "detected", this);
+        MoveState = new BearMoveState(this, StateMachine, StateData, "move", this);
+        DetectedState = new BearDetectedPlayerState(this, StateMachine, StateData, "detected", this);
+        KnockbackState = new BearKnockbackState(this, StateMachine, StateData, "knockback", this);
     }
 
     public override void Start()
     {
         base.Start();
 
-        StateMachine.Initialize(BearMoveState);
+        StateMachine.Initialize(MoveState);
     }
 
     public override void FixedUpdate()
@@ -33,6 +35,17 @@ public class Enemy_Bear : Enemy
     public override void Update()
     {
         base.Update();
+    }
+
+    public override void Damage(float[] attackDetails)
+    {
+        base.Damage(attackDetails);
+
+        if (KnockbackState.CanTakeDamage)
+        {
+            tookDamage = true;
+            Debug.Log(tookDamage);
+        }
     }
 
     #region Check Functions

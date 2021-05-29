@@ -6,7 +6,7 @@ using UnityEngine;
 public class enemyData : ScriptableObject
 {
     [Header("Stats")]
-    public int EnemyHealth;
+    public int MaxHealth;
 
     [Header("Touch Box Collider")]
     public float HitBoxHeight;

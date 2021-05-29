@@ -121,11 +121,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TookDamage(float[] attackDetails)
+    public void TakeDamage(float[] attackDetails)
     {
         damageDetails[0] = attackDetails[0];
         damageDetails[1] = attackDetails[1];
         damageDetails[2] = attackDetails[2];
+        Debug.Log("taking damage");
 
         if (KnockbackState.CanTakeDamage)
         {
