@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
+  m_Name: BanditPeon Data
+  m_EditorClassIdentifier: 
+  MaxHealth: 8
+  JumpVelocity: 18
+  JumpHeightMultiplier: 0.95
+  JumpCooldown: 4
+  GroundCheckRadius: 0.24
+  HitBoxHeight: 2.81
+  HitBoxWidth: 0.58
+  TouchDamage: 4
+  KnockbackForce: 1.35
+  KnockbackTimer: 0.35
+  KnockbackForceX: 4.15
+  KnockbackForceY: 1.25
+  MoveSpeed: 2.45
+  ChargeSpeed: 7.25
+  WallCheckDistance: 1.15
+  LedgeCheckDistance: 2.25
+  PlayerCheckDistanceMin: 1.99
+  PlayerCheckDistanceMax: 5.94
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128

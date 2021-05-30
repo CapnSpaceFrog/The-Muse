@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Boar Data
   m_EditorClassIdentifier: 
   MaxHealth: 4
-  HitBoxHeight: 0.83
-  HitBoxWidth: 1.56
+  JumpVelocity: 0
+  JumpHeightMultiplier: 0
+  JumpCooldown: 0
+  GroundCheckRadius: 0
+  HitBoxHeight: 1.1
+  HitBoxWidth: 2.04
   TouchDamage: 1
   KnockbackForce: 1.25
-  KnockbackTimer: 0.35
+  KnockbackTimer: 0.3
   KnockbackForceX: 3.23
   KnockbackForceY: 1.45
   MoveSpeed: 3

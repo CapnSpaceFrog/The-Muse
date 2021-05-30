@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -18,10 +19,15 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField]
     private float inputHoldTime = 0.2f;
 
+    [SerializeField]
+    private GameObject pauseMenu;
+    public bool PausedGame { get; private set; }
+
     private float jumpInputStartTime;
 
     private void Start()
     {
+        PausedGame = false;
         int count = Enum.GetValues(typeof(CombatInputs)).Length;
         AttackInputs = new bool[count];
     }
@@ -97,6 +103,21 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             AttackInputs[(int)CombatInputs.secondary] = false;
+        }
+    }
+
+    public void OnEscInput(InputAction.CallbackContext context)
+    {
+        if (context.started && !PausedGame)
+        {
+            PausedGame = true;
+            
+            pauseMenu.SetActive(true);
+        }
+        else if (context.started && PausedGame)
+        {
+            PausedGame = false;
+            pauseMenu.SetActive(false);
         }
     }
 }

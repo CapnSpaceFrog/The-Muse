@@ -8,6 +8,12 @@ public class enemyData : ScriptableObject
     [Header("Stats")]
     public int MaxHealth;
 
+    [Header("Jump State")]
+    public float JumpVelocity;
+    public float JumpHeightMultiplier;
+    public float JumpCooldown;
+    public float GroundCheckRadius;
+
     [Header("Touch Box Collider")]
     public float HitBoxHeight;
     public float HitBoxWidth;

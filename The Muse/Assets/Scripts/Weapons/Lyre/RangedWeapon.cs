@@ -8,7 +8,6 @@ public class RangedWeapon : Weapon
     private Projectile projectile;
     public Transform projectileStartPOS;
     private Player player;
-
     protected override void Start()
     {
         base.Start();

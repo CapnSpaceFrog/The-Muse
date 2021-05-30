@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public PlayerInputHandler InputHandler { get; private set; }
     public Rigidbody2D RB { get; private set; }
     public PlayerInventory Inventory { get; private set; }
+    public PlayerHealthVisuals HealthSystem { get; private set; }
     #endregion
 
     #region Check Transforms
@@ -36,6 +37,9 @@ public class Player : MonoBehaviour
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
 
+    public float lastSpellCast = -10;
+    public float spellCastCooldown = 7.5f;
+
     private Vector2 workspace;
 
     public bool tookDamage { get; set; }
@@ -44,6 +48,8 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
+        HealthSystem = GameObject.Find("HealthVisual").GetComponent<PlayerHealthVisuals>();
+
         StateMachine = new PlayerStateMachine();
 
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
@@ -52,8 +58,8 @@ public class Player : MonoBehaviour
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
         KnockbackState = new PlayerKnockbackState(this, StateMachine, playerData, "knockback");
-        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
-        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
+        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", 1);
+        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", 2);
     }
 
     private void Start()
@@ -107,7 +113,17 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Check Functions
-
+    public bool CheckIfCanSpellCast()
+    {
+        if (lastSpellCast + spellCastCooldown > Time.time)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
@@ -126,7 +142,6 @@ public class Player : MonoBehaviour
         damageDetails[0] = attackDetails[0];
         damageDetails[1] = attackDetails[1];
         damageDetails[2] = attackDetails[2];
-        Debug.Log("taking damage");
 
         if (KnockbackState.CanTakeDamage)
         {

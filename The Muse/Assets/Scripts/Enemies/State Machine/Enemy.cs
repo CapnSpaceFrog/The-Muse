@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public Animator Anim { get; private set; }
 
-    protected Vector2 workspace;
-    protected Vector2 CurrentVelocity;
+    public Vector2 workspace;
+    public Vector2 CurrentVelocity;
     protected Vector2 hitBoxBotLeft;
     protected Vector2 hitBoxTopRight;
 
@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
         TouchDamageBox();
 
         StateMachine.currentState.LogicUpdate();
-        Debug.Log(StateMachine.currentState);
     }
 
     public virtual void FixedUpdate()
@@ -86,6 +85,7 @@ public class Enemy : MonoBehaviour
     public void UpdateHealth(float damageToTake)
     {
         currentHealth -= (int) damageToTake;
+        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
@@ -124,7 +124,6 @@ public class Enemy : MonoBehaviour
     {
         damageDetails[0] = attackDetails[0];
         damageDetails[1] = attackDetails[1];
-        Debug.Log("hit enemy");
     }
     #endregion
 

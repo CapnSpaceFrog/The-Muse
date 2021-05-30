@@ -24,6 +24,7 @@ public class PlayerKnockbackState : PlayerState
             direction = -1;
         }
 
+        player.HealthSystem.playerHealthSystem.Damage((int)player.damageDetails[0]);
         player.SetVelocityZero();
         player.SetVelocityY(playerData.knockbackVelocityY * player.damageDetails[2]);
 
@@ -42,7 +43,7 @@ public class PlayerKnockbackState : PlayerState
     {
         base.LogicUpdate();
 
-        if (Time.time < startTime + (playerData.knockbackTimer * player.damageDetails[2]))
+        if (Time.time < startTime + playerData.knockbackTimer)
         {
             player.SetVelocityX(DecliningVelocity());
         }

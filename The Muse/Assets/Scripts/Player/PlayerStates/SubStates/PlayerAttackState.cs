@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerAttackState : PlayerAbilityState
 {
     private Weapon weapon;
+    private int typeOfAttack;
 
-    public PlayerAttackState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerAttackState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName, int typeOfAttack) : base(player, stateMachine, playerData, animBoolName)
     {
+        this.typeOfAttack = typeOfAttack;
     }
 
     public override void LogicUpdate()
@@ -28,6 +30,10 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Exit();
 
+        if (typeOfAttack == 2)
+        {
+            player.lastSpellCast = Time.time;
+        }
         weapon.ExitWeapon();
     }
 

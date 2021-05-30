@@ -43,11 +43,11 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.KnockbackState);
         }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !player.InputHandler.PausedGame)
         {
             stateMachine.ChangeState(player.PrimaryAttackState);
         }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && player.CheckIfCanSpellCast() && !player.InputHandler.PausedGame)
         {
             stateMachine.ChangeState(player.SecondaryAttackState);
         }
