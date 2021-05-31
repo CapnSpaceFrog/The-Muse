@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public PlayerAttackState PrimaryAttackState { get; private set; }
     public PlayerAttackState SecondaryAttackState { get; private set; }
     public PlayerKnockbackState KnockbackState { get; private set; }
+    public PlayerDeadState DeadState { get; private set; }
+
 
     public PlayerData playerData;
     #endregion
@@ -25,6 +27,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public PlayerInventory Inventory { get; private set; }
     public PlayerHealthVisuals HealthSystem { get; private set; }
+    [SerializeField]
+    private LevelLoader transition;
     #endregion
 
     #region Check Transforms
@@ -63,6 +67,7 @@ public class Player : MonoBehaviour
         KnockbackState = new PlayerKnockbackState(this, StateMachine, playerData, "knockback");
         PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", 1);
         SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", 2);
+        DeadState = new PlayerDeadState(this, StateMachine, playerData, "dead");
     }
 
     private void Start()
@@ -173,6 +178,18 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.transform.position, playerData.groundCheckRadius);
+    }
+
+    public void GameOver()
+    {
+        Physics2D.IgnoreLayerCollision(7, 3, true);
+        StartCoroutine(DeathText());
+    }
+
+    IEnumerator DeathText()
+    {
+        yield return new WaitForSeconds(1f);
+        transition.GameOver();
     }
     #endregion
 }

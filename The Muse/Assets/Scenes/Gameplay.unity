@@ -613,7 +613,7 @@ MonoBehaviour:
   heart0Sprite: {fileID: 21300000, guid: 2c5ba6a811fc7ca418c5c1aaa39fbd30, type: 3}
   heart1Sprite: {fileID: 21300000, guid: 9ed6c5a4ec668904da67b527b4b7f880, type: 3}
   heart2Sprite: {fileID: 21300000, guid: fce618274c2dd854e98ff9943754167f, type: 3}
-  transition: {fileID: 6497226358589959011}
+  player: {fileID: 1205205053}
 --- !u!1 &219348191
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219348191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 0.247, z: 0}
+  m_LocalPosition: {x: 0.168, y: 0.23, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
   m_Children: []
   m_Father: {fileID: 1205205051}
@@ -1288,7 +1288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0.0000000037252903, y: 0.000000007450581, z: 2.7755576e-17, w: 1}
-  m_LocalPosition: {x: 73.75923, y: 1.1880559, z: 8.6942215}
+  m_LocalPosition: {x: 87.83923, y: 2.3080559, z: 8.6942215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1537195138}
@@ -1604,7 +1604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695635048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.462, y: 0.11600002, z: 0}
+  m_LocalPosition: {x: 0.377, y: 0.11600002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 645663969}
@@ -1768,7 +1768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869334882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.462, y: 0.11600002, z: 0}
+  m_LocalPosition: {x: 0.377, y: 0.11600002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 577399831}
@@ -2637,7 +2637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205205049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.9, y: 1.17, z: 0}
+  m_LocalPosition: {x: 87.98, y: 2.29, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 65131739}
@@ -2673,6 +2673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: c4c62e6b37a7ce34c9c491796a6dc358, type: 2}
+  transition: {fileID: 6497226358589959011}
   groundCheck: {fileID: 65131739}
   damageDetails:
   - 0
@@ -23108,7 +23109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723096528}
   m_LocalRotation: {x: -0.0000000037252903, y: 0.000000007450581, z: 2.7755576e-17, w: 1}
-  m_LocalPosition: {x: 73.75923, y: 1.1880559, z: 8.6942215}
+  m_LocalPosition: {x: 87.83923, y: 2.3080559, z: 8.6942215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 378872444}

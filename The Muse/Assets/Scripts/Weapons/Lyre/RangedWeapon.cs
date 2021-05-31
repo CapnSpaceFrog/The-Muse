@@ -19,6 +19,7 @@ public class RangedWeapon : Weapon
     public override void InsantiateProjectile()
     {
         projectile.attackDetails[0] = player.playerData.LyreDamage;
+        projectile.attackDetails[1] = player.transform.position.x;
         projectile.direction = player.FacingDirection;
         Instantiate(projectilePrefab, projectileStartPOS.position, Quaternion.identity);
     }

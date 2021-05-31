@@ -16,6 +16,8 @@ public class PlayerKnockbackState : PlayerState
     {
         base.Enter();
 
+        player.HealthSystem.playerHealthSystem.Damage((int)player.damageDetails[0]);
+
         if (player.damageDetails[1] < player.transform.position.x)
         {
             direction = 1;
@@ -23,8 +25,7 @@ public class PlayerKnockbackState : PlayerState
         {
             direction = -1;
         }
-
-        player.HealthSystem.playerHealthSystem.Damage((int)player.damageDetails[0]);
+        
         player.SetVelocityZero();
         player.SetVelocityY(playerData.knockbackVelocityY * player.damageDetails[2]);
 

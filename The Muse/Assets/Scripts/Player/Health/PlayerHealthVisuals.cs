@@ -14,9 +14,9 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     private List<HeartImage> heartImageList;
     public PlayerHealthSystem playerHealthSystem;
-
+    
     [SerializeField]
-    private LevelLoader transition;
+    private Player player;
 
     private void Awake()
     {
@@ -51,7 +51,8 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     private void PlayerHealthSystem_OnDead(object sender, System.EventArgs e)
     {
-        transition.GameOver();
+        player.StateMachine.ChangeState(player.DeadState);
+        player.GameOver();
     }
 
     private void PlayerHealthSystem_OnHealed(object sender, System.EventArgs e)

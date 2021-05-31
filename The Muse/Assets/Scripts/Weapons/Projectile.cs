@@ -36,7 +36,6 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Damageable"))
         {
-            attackDetails[1] = transform.position.x;
             other.gameObject.SendMessage("Damage", attackDetails);
             Destroy(gameObject);
         }

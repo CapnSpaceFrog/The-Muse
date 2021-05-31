@@ -21,6 +21,7 @@ public class SpellWeapon : Weapon
     public override void InsantiateProjectile()
     {
         projectile.attackDetails[0] = player.playerData.SpellDamage;
+        projectile.attackDetails[1] = player.transform.position.x;
         projectile.direction = player.FacingDirection;
         Instantiate(projectilePrefab, projectileStartPOS.position, projectileStartPOS.rotation);
     }
