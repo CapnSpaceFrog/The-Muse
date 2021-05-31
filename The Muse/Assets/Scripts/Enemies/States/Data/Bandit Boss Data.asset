@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
-  m_Name: BanditPeon Data
+  m_Name: Bandit Boss Data
   m_EditorClassIdentifier: 
-  MaxHealth: 16
-  JumpVelocity: 12.75
+  MaxHealth: 24
+  JumpVelocity: 0
   JumpVelocityHigh: 18
   JumpVelocityLow: 12.75
   JumpHeightMultiplier: 0.95
   GroundCheckRadius: 0.24
   JumpCheckRadius: 0.15
   AttackCheckRadius: 0.48
-  DeagroTimeLimit: 2.5
+  DeagroTimeLimit: 3.5
   HitBoxHeight: 2.81
   HitBoxWidth: 0.58
   TouchDamage: 4

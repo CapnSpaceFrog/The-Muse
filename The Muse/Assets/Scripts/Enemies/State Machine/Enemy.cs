@@ -10,16 +10,20 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public Animator Anim { get; private set; }
 
+    [HideInInspector]
     public Vector2 workspace;
+    [HideInInspector]
     public Vector2 CurrentVelocity;
     protected Vector2 hitBoxBotLeft;
     protected Vector2 hitBoxTopRight;
 
     public int currentHealth { get; private set; }
 
-    private float[] attackDetails = new float[3];
+    protected float[] attackDetails = new float[3];
+    [HideInInspector]
     public float[] damageDetails = new float[2];
 
+    [HideInInspector]
     public bool tookDamage;
 
     [SerializeField]

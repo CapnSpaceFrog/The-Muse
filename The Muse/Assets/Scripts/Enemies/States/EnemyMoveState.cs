@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMoveState : EnemyState
 {
-    protected bool detectedWall;
-    protected bool detectedLedge;
+    public bool detectedWall { get; private set; }
+    public bool detectedLedge { get; private set; }
 
     public EnemyMoveState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName) : base(enemy, stateMachine, stateData, animBoolName)
     {
@@ -29,11 +29,6 @@ public class EnemyMoveState : EnemyState
         base.LogicUpdate();
 
         enemy.SetVelocityX(stateData.MoveSpeed * enemy.FacingDirection);
-
-        if (detectedWall || !detectedLedge)
-        {
-            enemy.Flip();
-        }
     }
 
     public override void PhysicsUpdate()

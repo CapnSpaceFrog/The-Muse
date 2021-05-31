@@ -10,9 +10,17 @@ public class enemyData : ScriptableObject
 
     [Header("Jump State")]
     public float JumpVelocity;
+    public float JumpVelocityHigh;
+    public float JumpVelocityLow;
     public float JumpHeightMultiplier;
-    public float JumpCooldown;
     public float GroundCheckRadius;
+    public float JumpCheckRadius;
+
+    [Header("Attack State")]
+    public float AttackCheckRadius;
+
+    [Header("Detect State")]
+    public float DeagroTimeLimit;
 
     [Header("Touch Box Collider")]
     public float HitBoxHeight;

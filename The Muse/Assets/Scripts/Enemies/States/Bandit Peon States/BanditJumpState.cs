@@ -6,7 +6,7 @@ public class BanditJumpState : EnemyState
 {
     private Enemy_BanditPeon peon;
 
-    public bool isJumping { get; private set; }
+    public bool IsJumping { get; private set; }
     public BanditJumpState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_BanditPeon peon) : base(enemy, stateMachine, stateData, animBoolName)
     {
         this.peon = peon;
@@ -16,7 +16,9 @@ public class BanditJumpState : EnemyState
     {
         base.Enter();
 
-        isJumping = true;
+        IsJumping = true;
+        peon.SetVelocityZero();
+        peon.SetVelocityX(stateData.MoveSpeed);
         peon.SetVelocityY(stateData.JumpVelocity);
     }
 
@@ -33,16 +35,16 @@ public class BanditJumpState : EnemyState
 
         if (peon.CheckIfGrounded() && peon.CurrentVelocity.y < 0.01f)
         {
-            isJumping = false;
+            IsJumping = false;
         }
     }
 
     private void CheckJumpMultiplier()
     {
-        if (isJumping && !peon.CheckIfGrounded())
+        if (IsJumping && !peon.CheckIfGrounded())
         {
             peon.SetVelocityY(peon.CurrentVelocity.y * stateData.JumpHeightMultiplier);
-            isJumping = false;
+            IsJumping = false;
             stateMachine.ChangeState(peon.MoveState);
         }
     }

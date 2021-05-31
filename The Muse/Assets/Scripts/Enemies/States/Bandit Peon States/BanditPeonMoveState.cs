@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class BanditPeonMoveState : EnemyMoveState
 {
-    private Enemy_BanditPeon peon;
-
-    private bool hasNotAttemptedJump;
-    private bool canFlip;
-
-    private float lastJumpAttempt = -10;
+    protected Enemy_BanditPeon peon;
     public BanditPeonMoveState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_BanditPeon peon) : base(enemy, stateMachine, stateData, animBoolName)
     {
         this.peon = peon;
@@ -29,36 +24,34 @@ public class BanditPeonMoveState : EnemyMoveState
     {
         enemy.SetVelocityX(stateData.MoveSpeed * enemy.FacingDirection);
 
-        if (Time.time > lastJumpAttempt + stateData.JumpCooldown)
-        {
-            hasNotAttemptedJump = true;
-        }
-
         if (peon.CheckIfGrounded())
         {
-            canFlip = true;
-            hasNotAttemptedJump = true;
+            peon.canFlip = true;
+            peon.hasNotAttemptedJump = true;
         }
         else
         {
-            canFlip = false;
+            peon.canFlip = false;
         }
 
-        if (!detectedLedge && canFlip)
+        if (!detectedLedge && peon.canFlip)
         {
             enemy.Flip();
         }
 
-        if (detectedWall && hasNotAttemptedJump)
-        {
-            peon.StateMachine.ChangeState(peon.JumpState);
-            lastJumpAttempt = Time.time;
-            hasNotAttemptedJump = false;
-        }
 
-        if (peon.DetectPlayerMin())
+        
+        if (peon.NeedsToJump())
+        {
+            stateMachine.ChangeState(peon.JumpState);
+        }
+        else if (peon.DetectPlayerMax())
         {
             stateMachine.ChangeState(peon.DetectedState);
+        }
+        else if (peon.DetectPlayerMin())
+        {
+            stateMachine.ChangeState(peon.AttackState);
         }
         else if (peon.tookDamage)
         {

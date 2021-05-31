@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: b4d7b32ad75577041b5cf02c66396516
+guid: d5cb57bbf57fc7249a067a91d1d07725
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3589189901822242187
-    second: BossAttackSTABaniNEWx128_0
+      213: 8407462344496496801
+    second: BanditAttackSTABx128_copy_0
   - first:
-      213: 482626210964069009
-    second: BossAttackSTABaniNEWx128_1
+      213: -3573926104941116453
+    second: BanditAttackSTABx128_copy_1
   - first:
-      213: 150205274850630102
-    second: BossAttackSTABaniNEWx128_2
+      213: -4400217595725555184
+    second: BanditAttackSTABx128_copy_2
   - first:
-      213: -1253359475962689462
-    second: BossAttackSTABaniNEWx128_3
+      213: -4599266009508870047
+    second: BanditAttackSTABx128_copy_3
   - first:
-      213: 3290011204786971733
-    second: BossAttackSTABaniNEWx128_4
+      213: 4169573338372957876
+    second: BanditAttackSTABx128_copy_4
   - first:
-      213: 5173102247022318443
-    second: BossAttackSTABaniNEWx128_5
+      213: 4864803824402985130
+    second: BanditAttackSTABx128_copy_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BossAttackSTABaniNEWx128_0
+      name: BanditAttackSTABx128_copy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5725776fcc2a03ec0800000000000000
-      internalID: -3589189901822242187
+      spriteID: 1a0cf2a257e4da470800000000000000
+      internalID: 8407462344496496801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossAttackSTABaniNEWx128_1
+      name: BanditAttackSTABx128_copy_1
       rect:
         serializedVersion: 2
         x: 128
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19a5ec75bf1a2b600800000000000000
-      internalID: 482626210964069009
+      spriteID: bd34d7d942dd66ec0800000000000000
+      internalID: -3573926104941116453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossAttackSTABaniNEWx128_2
+      name: BanditAttackSTABx128_copy_2
       rect:
         serializedVersion: 2
         x: 256
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d99cd2d6e2a51200800000000000000
-      internalID: 150205274850630102
+      spriteID: 01ada58f8694fe2c0800000000000000
+      internalID: -4400217595725555184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossAttackSTABaniNEWx128_3
+      name: BanditAttackSTABx128_copy_3
       rect:
         serializedVersion: 2
         x: 384
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48cf5b723c2b9ee0800000000000000
-      internalID: -1253359475962689462
+      spriteID: 16802bbaeef1c20c0800000000000000
+      internalID: -4599266009508870047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossAttackSTABaniNEWx128_4
+      name: BanditAttackSTABx128_copy_4
       rect:
         serializedVersion: 2
         x: 512
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 554e16072c778ad20800000000000000
-      internalID: 3290011204786971733
+      spriteID: 4b6e8a22cdc4dd930800000000000000
+      internalID: 4169573338372957876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossAttackSTABaniNEWx128_5
+      name: BanditAttackSTABx128_copy_5
       rect:
         serializedVersion: 2
         x: 640
@@ -240,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b635a8cd51d8ac740800000000000000
-      internalID: 5173102247022318443
+      spriteID: aa0708fad41438340800000000000000
+      internalID: 4864803824402985130
       vertices: []
       indices: 
       edges: []

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: Boar Data
   m_EditorClassIdentifier: 
-  MaxHealth: 4
+  MaxHealth: 6
   JumpVelocity: 0
   JumpHeightMultiplier: 0
   JumpCooldown: 0
@@ -21,9 +21,9 @@ MonoBehaviour:
   HitBoxWidth: 2.04
   TouchDamage: 1
   KnockbackForce: 1.25
-  KnockbackTimer: 0.3
+  KnockbackTimer: 0.32
   KnockbackForceX: 3.23
-  KnockbackForceY: 1.45
+  KnockbackForceY: 1.35
   MoveSpeed: 3
   ChargeSpeed: 6
   WallCheckDistance: 0.24

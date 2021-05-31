@@ -12,20 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: Bear Data
   m_EditorClassIdentifier: 
-  MaxHealth: 16
+  MaxHealth: 12
+  JumpVelocity: 0
+  JumpHeightMultiplier: 0
+  JumpCooldown: 0
+  GroundCheckRadius: 0
   HitBoxHeight: 2.06
   HitBoxWidth: 3.38
   TouchDamage: 2
   KnockbackForce: 1.5
-  KnockbackTimer: 0.23
-  KnockbackForceX: 4.15
+  KnockbackTimer: 0.24
+  KnockbackForceX: 2.75
   KnockbackForceY: 1.25
-  MoveSpeed: 4
-  ChargeSpeed: 8
+  MoveSpeed: 3.5
+  ChargeSpeed: 10
   WallCheckDistance: 0.84
   LedgeCheckDistance: 0.57
-  PlayerCheckDistanceMin: 6.45
-  PlayerCheckDistanceMax: 15.45
+  PlayerCheckDistanceMin: 7.45
+  PlayerCheckDistanceMax: 18.25
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64

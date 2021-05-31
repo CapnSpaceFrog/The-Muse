@@ -1,49 +1,46 @@
 fileFormatVersion: 2
-guid: bb43dc0dee08f254ea98974683fa0139
+guid: f7e90592f41c40b4e8ea121394046063
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4505275845067614643
-    second: BOSSTHROW_0
+      213: -2016557494327053096
+    second: BossBanditWalkani_copy_0
   - first:
-      213: 6363247521081922726
-    second: BOSSTHROW_1
+      213: -7467819679180817632
+    second: BossBanditWalkani_copy_1
   - first:
-      213: -3327906253142196150
-    second: BOSSTHROW_2
+      213: 5863663237355915719
+    second: BossBanditWalkani_copy_2
   - first:
-      213: -3053508963653432433
-    second: BOSSTHROW_3
+      213: -1569061816659155081
+    second: BossBanditWalkani_copy_3
   - first:
-      213: -7210662390512869313
-    second: BOSSTHROW_4
+      213: 3766373572609970322
+    second: BossBanditWalkani_copy_4
   - first:
-      213: 8018288705341561815
-    second: BOSSTHROW_5
+      213: 1694062116082706428
+    second: BossBanditWalkani_copy_5
   - first:
-      213: -8065178948566689856
-    second: BOSSTHROW_6
+      213: 4349757048645896593
+    second: BossBanditWalkani_copy_6
   - first:
-      213: 2543984788656027261
-    second: BOSSTHROW_7
+      213: -1141648137987046136
+    second: BossBanditWalkani_copy_7
   - first:
-      213: -6625311798532159404
-    second: BOSSTHROW_8
+      213: -732508339557541144
+    second: BossBanditWalkani_copy_8
   - first:
-      213: -4600054098000752404
-    second: BOSSTHROW_9
+      213: 4866262840840980903
+    second: BossBanditWalkani_copy_9
   - first:
-      213: -889233521593081508
-    second: BOSSTHROW_10
+      213: -2153989631647124418
+    second: BossBanditWalkani_copy_10
   - first:
-      213: -1925960770501169268
-    second: BOSSTHROW_11
+      213: 9035564455053901366
+    second: BossBanditWalkani_copy_11
   - first:
-      213: 8646128533961146926
-    second: BOSSTHROW_12
-  - first:
-      213: -983640577909256915
-    second: BOSSTHROW_13
+      213: -3123418453669292986
+    second: BossBanditWalkani_copy_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BOSSTHROW_0
+      name: BossBanditWalkani_copy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b92768d284f58e30800000000000000
-      internalID: 4505275845067614643
+      spriteID: 8d4fb71a4afb304e0800000000000000
+      internalID: -2016557494327053096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_1
+      name: BossBanditWalkani_copy_1
       rect:
         serializedVersion: 2
         x: 128
@@ -180,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a419ff08ebce4850800000000000000
-      internalID: 6363247521081922726
+      spriteID: 02b71c76199fc5890800000000000000
+      internalID: -7467819679180817632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_2
+      name: BossBanditWalkani_copy_2
       rect:
         serializedVersion: 2
         x: 256
@@ -201,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4088af05e6e0d1d0800000000000000
-      internalID: -3327906253142196150
+      spriteID: 7c9cd19b5aaef5150800000000000000
+      internalID: 5863663237355915719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_3
+      name: BossBanditWalkani_copy_3
       rect:
         serializedVersion: 2
         x: 384
@@ -222,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8b47f696c1cf95d0800000000000000
-      internalID: -3053508963653432433
+      spriteID: 777e66b4792993ae0800000000000000
+      internalID: -1569061816659155081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_4
+      name: BossBanditWalkani_copy_4
       rect:
         serializedVersion: 2
         x: 512
@@ -243,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30263272c49eeb90800000000000000
-      internalID: -7210662390512869313
+      spriteID: 29016d62fc8d44430800000000000000
+      internalID: 3766373572609970322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_5
+      name: BossBanditWalkani_copy_5
       rect:
         serializedVersion: 2
         x: 640
@@ -264,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7db1964481fa64f60800000000000000
-      internalID: 8018288705341561815
+      spriteID: cf76e80e484828710800000000000000
+      internalID: 1694062116082706428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_6
+      name: BossBanditWalkani_copy_6
       rect:
         serializedVersion: 2
         x: 768
@@ -285,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c759b83a7ab21090800000000000000
-      internalID: -8065178948566689856
+      spriteID: 1994acf5df07d5c30800000000000000
+      internalID: 4349757048645896593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_7
+      name: BossBanditWalkani_copy_7
       rect:
         serializedVersion: 2
         x: 896
@@ -306,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d76f6d9cfac0e4320800000000000000
-      internalID: 2543984788656027261
+      spriteID: 805cbc4311d0820f0800000000000000
+      internalID: -1141648137987046136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_8
+      name: BossBanditWalkani_copy_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -327,14 +324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 458494a850a2e04a0800000000000000
-      internalID: -6625311798532159404
+      spriteID: 8ea59a1db8b95d5f0800000000000000
+      internalID: -732508339557541144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_9
+      name: BossBanditWalkani_copy_9
       rect:
         serializedVersion: 2
         x: 1152
@@ -348,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce0d5158b235920c0800000000000000
-      internalID: -4600054098000752404
+      spriteID: 7a9820c6540788340800000000000000
+      internalID: 4866262840840980903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_10
+      name: BossBanditWalkani_copy_10
       rect:
         serializedVersion: 2
         x: 1280
@@ -369,14 +366,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51231fc2dec8a3f0800000000000000
-      internalID: -889233521593081508
+      spriteID: e347cc3a7dd7b12e0800000000000000
+      internalID: -2153989631647124418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_11
+      name: BossBanditWalkani_copy_11
       rect:
         serializedVersion: 2
         x: 1408
@@ -390,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8fa0f622ec9545e0800000000000000
-      internalID: -1925960770501169268
+      spriteID: 63e32a8dff5c46d70800000000000000
+      internalID: 9035564455053901366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BOSSTHROW_12
+      name: BossBanditWalkani_copy_12
       rect:
         serializedVersion: 2
         x: 1536
@@ -411,29 +408,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e228f1da7183df770800000000000000
-      internalID: 8646128533961146926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BOSSTHROW_13
-      rect:
-        serializedVersion: 2
-        x: 1664
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2d0f0f1b186952f0800000000000000
-      internalID: -983640577909256915
+      spriteID: 6445428077367a4d0800000000000000
+      internalID: -3123418453669292986
       vertices: []
       indices: 
       edges: []
