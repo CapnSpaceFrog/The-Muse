@@ -37,7 +37,7 @@ public class EnemyKnockbackState : EnemyState
 
         enemy.UpdateHealth(enemy.damageDetails[0]);
         enemy.SetVelocityZero();
-        enemy.SetVelocityY(stateData.KnockbackForceY * stateData.KnockbackForce);
+        enemy.SetVelocityY(stateData.KnockbackForceY);
 
         CanTakeDamage = false;
     }
@@ -60,7 +60,7 @@ public class EnemyKnockbackState : EnemyState
     public float DecliningVelocity()
     {
         float workspace;
-        workspace = (stateData.KnockbackForceX * direction) * stateData.KnockbackForce;
+        workspace = (stateData.KnockbackForceX * direction);
         workspace -= Time.deltaTime;
 
         return workspace;

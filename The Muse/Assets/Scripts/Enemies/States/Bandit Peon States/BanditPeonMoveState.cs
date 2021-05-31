@@ -38,8 +38,6 @@ public class BanditPeonMoveState : EnemyMoveState
         {
             enemy.Flip();
         }
-
-
         
         if (peon.NeedsToJump())
         {

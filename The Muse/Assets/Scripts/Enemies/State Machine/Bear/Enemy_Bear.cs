@@ -7,9 +7,19 @@ public class Enemy_Bear : Enemy
     public BearDetectedPlayerState DetectedState { get; private set; }
     public BearMoveState MoveState { get; private set; }
     public BearKnockbackState KnockbackState { get; private set; }
+    public BearJumpState JumpState { get; private set; }
 
     [SerializeField]
     private Transform playerCheck;
+    [SerializeField]
+    private Transform groundCheck;
+    [SerializeField]
+    private Transform jumpCheck;
+
+    [HideInInspector]
+    public bool hasNotAttemptedJump = false;
+    [HideInInspector]
+    public bool canFlip;
 
     public override void Awake()
     {
@@ -17,6 +27,7 @@ public class Enemy_Bear : Enemy
 
         MoveState = new BearMoveState(this, StateMachine, StateData, "move", this);
         DetectedState = new BearDetectedPlayerState(this, StateMachine, StateData, "detected", this);
+        JumpState = new BearJumpState(this, StateMachine, StateData, "jump", this);
         KnockbackState = new BearKnockbackState(this, StateMachine, StateData, "knockback", this);
     }
 
@@ -44,7 +55,6 @@ public class Enemy_Bear : Enemy
         if (KnockbackState.CanTakeDamage)
         {
             tookDamage = true;
-            Debug.Log(tookDamage);
         }
     }
 
@@ -58,6 +68,34 @@ public class Enemy_Bear : Enemy
     {
         return Physics2D.Raycast(playerCheck.position, gameObject.transform.right, StateData.PlayerCheckDistanceMin, StateData.whatIsPlayer);
     }
+
+    public bool CheckIfGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, StateData.GroundCheckRadius, StateData.whatIsGround);
+    }
+
+    public bool NeedsToJump()
+    {
+        if (JumpCheck())
+        {
+            Flip();
+        }
+
+        if (CheckWall() && hasNotAttemptedJump && !JumpCheck())
+        {
+            hasNotAttemptedJump = false;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool JumpCheck()
+    {
+        return Physics2D.OverlapCircle(jumpCheck.position, StateData.JumpCheckRadius, StateData.whatIsGround);
+    }
     #endregion
 
     protected override void OnDrawGizmos()
@@ -66,5 +104,8 @@ public class Enemy_Bear : Enemy
 
         Gizmos.DrawRay(playerCheck.position, gameObject.transform.right * StateData.PlayerCheckDistanceMin);
         Gizmos.DrawRay(playerCheck.position, gameObject.transform.right * StateData.PlayerCheckDistanceMax);
+
+        Gizmos.DrawWireSphere(groundCheck.position, StateData.GroundCheckRadius);
+        Gizmos.DrawWireSphere(jumpCheck.position, StateData.JumpCheckRadius);
     }
 }

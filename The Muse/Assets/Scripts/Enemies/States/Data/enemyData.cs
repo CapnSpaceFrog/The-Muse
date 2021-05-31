@@ -19,6 +19,11 @@ public class enemyData : ScriptableObject
     [Header("Attack State")]
     public float AttackCheckRadius;
 
+    [Header("Throw State")]
+    public int ProjectileDamage;
+    public float ProjectileSpeed;
+    public float ThrowKnifeCooldown;
+
     [Header("Detect State")]
     public float DeagroTimeLimit;
 

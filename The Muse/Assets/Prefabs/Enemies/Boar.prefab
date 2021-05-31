@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1511656136094155600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8417500739430170056}
+  m_Layer: 3
+  m_Name: Jump Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8417500739430170056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511656136094155600}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5999992, y: 0.107692316, z: 0}
+  m_LocalScale: {x: 2.3076923, y: 2.3076923, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5235791173808058392}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5235791173808058396
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +65,7 @@ Transform:
   - {fileID: 5235791175222879797}
   - {fileID: 5235791174648210409}
   - {fileID: 5235791175324845169}
+  - {fileID: 8417500739430170056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -168,6 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateData: {fileID: 11400000, guid: aa9ba28eb80e6eb4c9924a0bfc758806, type: 2}
+  workspace: {x: 0, y: 0}
+  CurrentVelocity: {x: 0, y: 0}
   damageDetails:
   - 0
   - 0

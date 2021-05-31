@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class BanditProjectile : MonoBehaviour
 {
     private Vector2 startPos;
     private Rigidbody2D RB;
+    [SerializeField]
+    private enemyData stateData;
 
-    public float[] attackDetails = new float[2];
+    [HideInInspector]
+    public float[] attackDetails = new float[3];
 
     public int direction;
 
@@ -29,15 +32,17 @@ public class Projectile : MonoBehaviour
 
     private void MoveProjectile()
     {
-        RB.velocity = new Vector2(direction * 25, 0);
+        RB.velocity = new Vector2(direction * stateData.ProjectileSpeed, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Damageable"))
+        if (other.CompareTag("Player"))
         {
+            attackDetails[0] = stateData.ProjectileDamage;
             attackDetails[1] = transform.position.x;
-            other.gameObject.SendMessage("Damage", attackDetails);
+            attackDetails[2] = stateData.KnockbackForce;
+            other.gameObject.SendMessage("TakeDamage", attackDetails);
             Destroy(gameObject);
         }
 

@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Bandit Boss Data
   m_EditorClassIdentifier: 
   MaxHealth: 24
-  JumpVelocity: 0
+  JumpVelocity: 13.75
   JumpVelocityHigh: 18
-  JumpVelocityLow: 12.75
+  JumpVelocityLow: 13.75
   JumpHeightMultiplier: 0.95
   GroundCheckRadius: 0.24
   JumpCheckRadius: 0.15
   AttackCheckRadius: 0.48
-  DeagroTimeLimit: 3.5
+  ProjectileDamage: 2
+  ProjectileSpeed: 22
+  ThrowKnifeCooldown: 6
+  DeagroTimeLimit: 4.5
   HitBoxHeight: 2.81
   HitBoxWidth: 0.58
   TouchDamage: 4

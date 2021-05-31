@@ -5,12 +5,14 @@ using UnityEngine;
 public class BanditDetectedState : EnemyMoveState
 {
     private Enemy_BanditPeon peon;
-    private bool canDeaggro;
+    private float timeSinceLeftRange;
+    private bool trigger;
 
     public BanditDetectedState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_BanditPeon peon) : base(enemy, stateMachine, stateData, animBoolName)
     {
         this.peon = peon;
     }
+
     public override void Enter()
     {
         base.Enter();
@@ -42,39 +44,45 @@ public class BanditDetectedState : EnemyMoveState
             enemy.Flip();
         }
 
+        if (peon.DetectPlayerMin())
+        {
+            trigger = true;
+        }
+
         if (peon.tookDamage)
         {
             stateMachine.ChangeState(peon.KnockbackState);
         }
-        else if (peon.CheckWall())
+        else if (peon.NeedsToJump())
         {
-            if (peon.NeedsToJump())
-            {
-                stateMachine.ChangeState(peon.JumpState);
-            }
+            stateMachine.ChangeState(peon.JumpState);
         }
         else if (peon.DetectPlayerMin())
         {
             stateMachine.ChangeState(peon.AttackState);
         }
-        else if (!peon.DetectPlayerMax() && canDeaggro)
+
+        if (DetectionLeaveTimer())
         {
             stateMachine.ChangeState(peon.MoveState);
         }
     }
 
-    private void DetectionLeaveTimer()
+    private bool DetectionLeaveTimer()
     {
-        float timeSinceLeftRange;
-
         if (!peon.DetectPlayerMax())
         {
-            timeSinceLeftRange = Time.time;
+            if (trigger)
+            {
+                timeSinceLeftRange = Time.time;
+                trigger = false;
+            }
+
             if (Time.time > timeSinceLeftRange + stateData.DeagroTimeLimit)
             {
-                canDeaggro = true;
+                return true;
             }
         }
+        return false;
     }
-
 }

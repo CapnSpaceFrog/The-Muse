@@ -25,6 +25,11 @@ public class BoarMoveState : EnemyMoveState
     {
         base.LogicUpdate();
 
+        if (!boar.CheckLedge() || boar.CheckWall())
+        {
+            boar.Flip();
+        }
+
         if (boar.tookDamage)
         {
             stateMachine.ChangeState(boar.KnockbackState);

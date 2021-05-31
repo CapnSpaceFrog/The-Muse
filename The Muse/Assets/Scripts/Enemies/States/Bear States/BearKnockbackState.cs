@@ -24,7 +24,7 @@ public class BearKnockbackState : EnemyKnockbackState
     {
         base.LogicUpdate();
 
-        if (Time.time < stateStartTime + (stateData.KnockbackTimer * stateData.KnockbackForce))
+        if (Time.time < stateStartTime + stateData.KnockbackTimer)
         {
             enemy.SetVelocityX(DecliningVelocity());
         }

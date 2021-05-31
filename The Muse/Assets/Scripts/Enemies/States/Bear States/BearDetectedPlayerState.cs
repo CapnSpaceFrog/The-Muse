@@ -2,23 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearDetectedPlayerState : EnemyState
+public class BearDetectedPlayerState : EnemyMoveState
 {
     protected Enemy_Bear bear;
-    
+    private float timeSinceLeftRange;
+    private bool trigger;
+
     public BearDetectedPlayerState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_Bear bear) : base(enemy, stateMachine, stateData, animBoolName)
     {
         this.bear = bear;
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
     }
 
     public override void LogicUpdate()
@@ -27,7 +19,31 @@ public class BearDetectedPlayerState : EnemyState
 
         bear.SetVelocityX(stateData.ChargeSpeed * enemy.FacingDirection);
 
-        if (bear.tookDamage)
+        if (bear.CheckIfGrounded())
+        {
+            bear.canFlip = true;
+            bear.hasNotAttemptedJump = true;
+        }
+        else
+        {
+            bear.canFlip = false;
+        }
+
+        //if (!detectedLedge && bear.canFlip)
+        //{
+        //    enemy.Flip();
+        //}
+
+        if (bear.DetectPlayerMin())
+        {
+            trigger = true;
+        }
+
+        if (bear.NeedsToJump())
+        {
+            stateMachine.ChangeState(bear.JumpState);
+        }
+        else if (bear.tookDamage)
         {
             stateMachine.ChangeState(bear.KnockbackState);
         }
@@ -35,10 +51,28 @@ public class BearDetectedPlayerState : EnemyState
         {
             stateMachine.ChangeState(bear.MoveState);
         }
+
+        if (DetectionLeaveTimer())
+        {
+            stateMachine.ChangeState(bear.MoveState);
+        }
     }
 
-    public override void PhysicsUpdate()
+    private bool DetectionLeaveTimer()
     {
-        base.PhysicsUpdate();
+        if (!bear.DetectPlayerMax())
+        {
+            if (trigger)
+            {
+                timeSinceLeftRange = Time.time;
+                trigger = false;
+            }
+
+            if (Time.time > timeSinceLeftRange + stateData.DeagroTimeLimit)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

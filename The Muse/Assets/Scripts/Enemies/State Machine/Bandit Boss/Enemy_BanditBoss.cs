@@ -2,24 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_BanditPeon : Enemy
+public class Enemy_BanditBoss : Enemy
 {
-    public BanditPeonMoveState MoveState { get; private set; }
-    public BanditDetectedState DetectedState { get; private set; }
-    public BanditPeonKnockbackState KnockbackState { get; private set; }
-    public BanditJumpState JumpState { get; private set; }
-    public BanditPeonAttackState AttackState { get; private set; }
+    public BanditBossMoveState MoveState { get; private set; }
+    public BanditBossDetectState DetectedState { get; private set; }
+    public BanditBossKnockbackState KnockbackState { get; private set; }
+    public BanditBossJumpState JumpState { get; private set; }
+    public BanditBossAttackState AttackState { get; private set; }
+    public BanditBossThrowState ThrowState { get; private set; }
 
     [SerializeField]
-    private Transform playerCheck;
+    protected Transform playerCheck;
     [SerializeField]
-    private Transform groundCheck;
+    protected Transform groundCheck;
     [SerializeField]
-    private Transform attackCheck;
+    protected Transform attackCheck;
     [SerializeField]
     protected Transform jumpHighCheck;
     [SerializeField]
     protected Transform jumpLowCheck;
+    [SerializeField]
+    protected Transform projectileSpawnPos;
+
+    [SerializeField]
+    private GameObject bossKnifePrefab;
 
     [HideInInspector]
     public bool attackFinished;
@@ -28,15 +34,18 @@ public class Enemy_BanditPeon : Enemy
     [HideInInspector]
     public bool canFlip;
 
+    private float threwKnifeTime = -10;
+
     public override void Awake()
     {
         base.Awake();
 
-        MoveState = new BanditPeonMoveState(this, StateMachine, StateData, "move", this);
-        KnockbackState = new BanditPeonKnockbackState(this, StateMachine, StateData, "knockback", this);
-        DetectedState = new BanditDetectedState(this, StateMachine, StateData, "move", this);
-        JumpState = new BanditJumpState(this, StateMachine, StateData, "jump", this);
-        AttackState = new BanditPeonAttackState(this, StateMachine, StateData, "attack", this);
+        MoveState = new BanditBossMoveState(this, StateMachine, StateData, "move", this);
+        DetectedState = new BanditBossDetectState(this, StateMachine, StateData, "move", this);
+        KnockbackState = new BanditBossKnockbackState(this, StateMachine, StateData, "knockback", this);
+        JumpState = new BanditBossJumpState(this, StateMachine, StateData, "jump", this);
+        AttackState = new BanditBossAttackState(this, StateMachine, StateData, "attack", this);
+        ThrowState = new BanditBossThrowState(this, StateMachine, StateData, "throw", this);
     }
 
     public override void Start()
@@ -62,7 +71,6 @@ public class Enemy_BanditPeon : Enemy
         if (KnockbackState.CanTakeDamage)
         {
             tookDamage = true;
-            Debug.Log("took damage");
         }
     }
 
@@ -102,7 +110,7 @@ public class Enemy_BanditPeon : Enemy
 
         if (hit != null)
         {
-            base.attackDetails[0] = StateData.TouchDamage;
+            attackDetails[0] = StateData.TouchDamage;
             attackDetails[1] = transform.position.x;
             attackDetails[2] = StateData.KnockbackForce;
             hit.SendMessage("TakeDamage", attackDetails);
@@ -154,6 +162,22 @@ public class Enemy_BanditPeon : Enemy
     private bool CheckLowJump()
     {
         return Physics2D.OverlapCircle(jumpLowCheck.position, StateData.JumpCheckRadius, StateData.whatIsGround);
+    }
+
+    public void InstantiateProjectile()
+    {
+            bossKnifePrefab.GetComponent<BanditProjectile>().direction = FacingDirection;
+            Instantiate(bossKnifePrefab, projectileSpawnPos.position, projectileSpawnPos.rotation);
+            threwKnifeTime = Time.time;
+    }
+
+    public bool CanThrowKnife()
+    {
+        if (Time.time > threwKnifeTime + StateData.ThrowKnifeCooldown)
+        {
+            return true;
+        }
+        return false;
     }
     #endregion
 }

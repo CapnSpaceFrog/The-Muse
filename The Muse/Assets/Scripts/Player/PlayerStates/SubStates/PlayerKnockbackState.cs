@@ -43,7 +43,7 @@ public class PlayerKnockbackState : PlayerState
     {
         base.LogicUpdate();
 
-        if (Time.time < startTime + playerData.knockbackTimer)
+        if (Time.time < startTime + (playerData.knockbackTimer * player.damageDetails[2]))
         {
             player.SetVelocityX(DecliningVelocity());
         }

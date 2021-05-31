@@ -25,7 +25,28 @@ public class BearMoveState : EnemyMoveState
     {
         base.LogicUpdate();
 
-        if (bear.DetectPlayerMin())
+        if (bear.CheckIfGrounded())
+        {
+            bear.canFlip = true;
+            bear.hasNotAttemptedJump = true;
+        }
+        else
+        {
+            bear.canFlip = false;
+        }
+
+        //Debug.Log(detectedLedge);
+
+        //if (!detectedLedge && bear.canFlip)
+        //{
+        //    enemy.Flip();
+        //}
+
+        if (bear.NeedsToJump())
+        {
+            stateMachine.ChangeState(bear.JumpState);
+        }
+        else if (bear.DetectPlayerMin())
         {
             stateMachine.ChangeState(bear.DetectedState);
         }

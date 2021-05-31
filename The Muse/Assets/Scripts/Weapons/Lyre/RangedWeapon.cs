@@ -20,6 +20,6 @@ public class RangedWeapon : Weapon
     {
         projectile.attackDetails[0] = player.playerData.LyreDamage;
         projectile.direction = player.FacingDirection;
-        Instantiate(projectilePrefab, projectileStartPOS.position, projectileStartPOS.rotation);
+        Instantiate(projectilePrefab, projectileStartPOS.position, Quaternion.identity);
     }
 }

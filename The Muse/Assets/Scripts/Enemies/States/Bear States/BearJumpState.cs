@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BanditJumpState : EnemyState
+public class BearJumpState : EnemyState
 {
-    private Enemy_BanditPeon peon;
+    private Enemy_Bear bear;
 
     public bool IsJumping { get; private set; }
-    public BanditJumpState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_BanditPeon peon) : base(enemy, stateMachine, stateData, animBoolName)
+    public BearJumpState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_Bear bear) : base(enemy, stateMachine, stateData, animBoolName)
     {
-        this.peon = peon;
+        this.bear = bear;
     }
 
     public override void Enter()
@@ -33,7 +33,7 @@ public class BanditJumpState : EnemyState
 
         CheckJumpMultiplier();
 
-        if (peon.CheckIfGrounded() && peon.CurrentVelocity.y < 0.01f)
+        if (bear.CheckIfGrounded() && bear.CurrentVelocity.y < 0.01f)
         {
             IsJumping = false;
         }
@@ -41,11 +41,11 @@ public class BanditJumpState : EnemyState
 
     private void CheckJumpMultiplier()
     {
-        if (IsJumping && !peon.CheckIfGrounded())
+        if (IsJumping && !bear.CheckIfGrounded())
         {
             enemy.SetVelocityY(enemy.CurrentVelocity.y * stateData.JumpHeightMultiplier);
             IsJumping = false;
-            stateMachine.ChangeState(peon.MoveState);
+            stateMachine.ChangeState(bear.MoveState);
         }
     }
 }

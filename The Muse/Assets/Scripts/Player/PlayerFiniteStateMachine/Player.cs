@@ -42,6 +42,9 @@ public class Player : MonoBehaviour
 
     private Vector2 workspace;
 
+    [SerializeField]
+    private GameObject spellIcon;
+
     public bool tookDamage { get; set; }
     #endregion
 
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         Inventory = GetComponent<PlayerInventory>();
 
-        FacingDirection = -1;
+        FacingDirection = 1;
 
         PrimaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.primary]);
         SecondaryAttackState.SetWeapon(Inventory.weapon[(int)CombatInputs.secondary]);
@@ -81,6 +84,12 @@ public class Player : MonoBehaviour
     {
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
+
+        if (CheckIfCanSpellCast()) {
+            spellIcon.SetActive(true);
+        } else {
+            spellIcon.SetActive(false);
+        }
     }
 
     private void FixedUpdate()

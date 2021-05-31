@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BanditPeonKnockbackState : EnemyKnockbackState
+public class BanditBossKnockbackState : EnemyKnockbackState
 {
-    private Enemy_BanditPeon peon;
-    public BanditPeonKnockbackState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_BanditPeon peon) : base(enemy, stateMachine, stateData, animBoolName)
+    private Enemy_BanditBoss boss;
+    public BanditBossKnockbackState(Enemy enemy, EnemyStateMachine stateMachine, enemyData stateData, string animBoolName, Enemy_BanditBoss boss) : base(enemy, stateMachine, stateData, animBoolName)
     {
-        this.peon = peon;
+        this.boss = boss;
     }
     public override void Enter()
     {
@@ -27,13 +27,13 @@ public class BanditPeonKnockbackState : EnemyKnockbackState
         {
             enemy.SetVelocityX(DecliningVelocity());
         }
-        else if (peon.DetectPlayerMin())
+        else if (boss.DetectPlayerMax())
         {
-            stateMachine.ChangeState(peon.DetectedState);
+            stateMachine.ChangeState(boss.DetectedState);
         }
         else
         {
-            stateMachine.ChangeState(peon.MoveState);
+            stateMachine.ChangeState(boss.MoveState);
         }
     }
 }

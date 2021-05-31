@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: BanditPeon Data
   m_EditorClassIdentifier: 
   MaxHealth: 16
-  JumpVelocity: 12.75
+  JumpVelocity: 13.75
   JumpVelocityHigh: 18
-  JumpVelocityLow: 12.75
+  JumpVelocityLow: 13.75
   JumpHeightMultiplier: 0.95
   GroundCheckRadius: 0.24
   JumpCheckRadius: 0.15
   AttackCheckRadius: 0.48
-  DeagroTimeLimit: 2.5
+  ProjectileDamage: 0
+  ProjectileSpeed: 0
+  ThrowKnifeCooldown: 0
+  DeagroTimeLimit: 3.25
   HitBoxHeight: 2.81
   HitBoxWidth: 0.58
-  TouchDamage: 4
+  TouchDamage: 3
   KnockbackForce: 1.35
   KnockbackTimer: 0.25
   KnockbackForceX: 4.15
