@@ -1131,3 +1131,43 @@ System memory in use after: 101.8 MB.
 Unloading 150 unused Assets to reduce memory usage. Loaded Objects now: 2744.
 Total: 2.917800 ms (FindLiveObjects: 0.294600 ms CreateObjectMapping: 0.188400 ms MarkObjects: 2.175900 ms  DeleteObjects: 0.257900 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001055 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.047 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2288 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.1 MB.
+System memory in use after: 106.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2885.
+Total: 2.667600 ms (FindLiveObjects: 0.342300 ms CreateObjectMapping: 0.067100 ms MarkObjects: 2.142800 ms  DeleteObjects: 0.114400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 168.105739 seconds.
+  path: Assets/KeySP.png
+  artifactKey: Guid(b8d12cc7c645f5c4192f98ccfb5f8fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/KeySP.png using Guid(b8d12cc7c645f5c4192f98ccfb5f8fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37f31124f2d0f0ca51fa32030e705022') in 0.060206 seconds
+  Import took 0.064049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/OrpheusEurydiceTogetherCLR.png
+  artifactKey: Guid(dcc266a17a895304f96620430ff586f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OrpheusEurydiceTogetherCLR.png using Guid(dcc266a17a895304f96620430ff586f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0175471909bf5019111f8110c4cdb79') in 0.013868 seconds
+  Import took 0.017535 seconds .
+
