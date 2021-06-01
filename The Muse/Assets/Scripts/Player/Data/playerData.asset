@@ -18,7 +18,7 @@ MonoBehaviour:
   movementVelocity: 5.75
   jumpVelocity: 15
   amountOfJumps: 1
-  coyoteTime: 0.2
+  coyoteTime: 0.15
   variableJumpHeightMultiplier: 0.5
   knockbackVelocityY: 5.85
   knockbackVelocityX: 7.45

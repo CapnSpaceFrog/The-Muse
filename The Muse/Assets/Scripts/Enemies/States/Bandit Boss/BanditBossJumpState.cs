@@ -45,7 +45,14 @@ public class BanditBossJumpState : EnemyState
         {
             enemy.SetVelocityY(enemy.CurrentVelocity.y * stateData.JumpHeightMultiplier);
             IsJumping = false;
-            stateMachine.ChangeState(boss.MoveState);
+            if (boss.DetectPlayerMax())
+            {
+                stateMachine.ChangeState(boss.DetectedState);
+            }
+            else
+            {
+                stateMachine.ChangeState(boss.MoveState);
+            }
         }
     }
 }

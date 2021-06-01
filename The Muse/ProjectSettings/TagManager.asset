@@ -55,6 +55,9 @@ TagManager:
   - name: Player
     uniqueID: 1090874529
     locked: 0
+  - name: Foreground Trees
+    uniqueID: 3057911299
+    locked: 0
   - name: Foreground Decorations
     uniqueID: 2023432371
     locked: 0

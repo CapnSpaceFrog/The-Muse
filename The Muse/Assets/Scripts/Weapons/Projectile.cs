@@ -33,14 +33,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Damageable"))
+        if (other.gameObject.CompareTag("Ground"))
         {
-            other.gameObject.SendMessage("Damage", attackDetails);
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Damageable"))
         {
+            other.gameObject.SendMessage("Damage", attackDetails);
             Destroy(gameObject);
         }
     }

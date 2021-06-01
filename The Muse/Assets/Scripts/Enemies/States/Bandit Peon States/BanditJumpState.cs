@@ -45,7 +45,14 @@ public class BanditJumpState : EnemyState
         {
             enemy.SetVelocityY(enemy.CurrentVelocity.y * stateData.JumpHeightMultiplier);
             IsJumping = false;
-            stateMachine.ChangeState(peon.MoveState);
+            if (peon.DetectPlayerMax())
+            {
+                stateMachine.ChangeState(peon.DetectedState);
+            }
+            else
+            {
+                stateMachine.ChangeState(peon.MoveState);
+            }
         }
     }
 }

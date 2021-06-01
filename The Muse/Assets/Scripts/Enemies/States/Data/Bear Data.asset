@@ -24,8 +24,8 @@ MonoBehaviour:
   ProjectileSpeed: 0
   ThrowKnifeCooldown: 0
   DeagroTimeLimit: 1.5
-  HitBoxHeight: 2.06
-  HitBoxWidth: 3.38
+  HitBoxHeight: 2.3
+  HitBoxWidth: 3.74
   TouchDamage: 2
   KnockbackForce: 1.85
   KnockbackTimer: 0.24

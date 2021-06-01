@@ -14,11 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 6
   JumpVelocity: 0
+  JumpVelocityHigh: 0
+  JumpVelocityLow: 0
   JumpHeightMultiplier: 0
-  JumpCooldown: 0
   GroundCheckRadius: 0
-  HitBoxHeight: 1.1
-  HitBoxWidth: 2.04
+  JumpCheckRadius: 0
+  AttackCheckRadius: 0
+  ProjectileDamage: 0
+  ProjectileSpeed: 0
+  ThrowKnifeCooldown: 0
+  DeagroTimeLimit: 0
+  HitBoxHeight: 1.79
+  HitBoxWidth: 2.55
   TouchDamage: 1
   KnockbackForce: 1.25
   KnockbackTimer: 0.32
