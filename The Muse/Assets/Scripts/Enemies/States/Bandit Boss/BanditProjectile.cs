@@ -24,7 +24,7 @@ public class BanditProjectile : MonoBehaviour
     {
         MoveProjectile();
 
-        if (Mathf.Abs(transform.position.x) > Mathf.Abs(startPos.x) + 20)
+        if (Mathf.Abs(transform.position.x) > Mathf.Abs(startPos.x) + 25 || Mathf.Abs(transform.position.x) < Mathf.Abs(startPos.x) - 25)
         {
             Destroy(gameObject);
         }
@@ -40,7 +40,6 @@ public class BanditProjectile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             attackDetails[0] = stateData.ProjectileDamage;
-            attackDetails[1] = transform.position.x;
             attackDetails[2] = stateData.KnockbackForce;
             other.gameObject.SendMessage("TakeDamage", attackDetails);
             Destroy(gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Vector2 startPos;
+    public Vector2 startPos;
     private Rigidbody2D RB;
 
     public float[] attackDetails = new float[2];
@@ -14,14 +14,13 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         RB = GetComponent<Rigidbody2D>();
-        startPos = transform.position;
     }
 
     private void Update()
     {
         MoveProjectile();
 
-        if (Mathf.Abs(transform.position.x) > Mathf.Abs(startPos.x) + 20)
+        if (Mathf.Abs(transform.position.x) > startPos.x + 25 || Mathf.Abs(transform.position.x) < startPos.x - 25)
         {
             Destroy(gameObject);
         }

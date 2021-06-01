@@ -5,4 +5,6 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public Weapon[] weapon;
+
+    public GameObject[] keySlot = new GameObject[1];
 }

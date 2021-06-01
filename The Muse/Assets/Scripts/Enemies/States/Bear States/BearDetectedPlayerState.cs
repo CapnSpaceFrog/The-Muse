@@ -29,10 +29,10 @@ public class BearDetectedPlayerState : EnemyMoveState
             bear.canFlip = false;
         }
 
-        //if (!detectedLedge && bear.canFlip)
-        //{
-        //    enemy.Flip();
-        //}
+        if (!detectedLedge && bear.canFlip)
+        {
+            enemy.Flip();
+        }
 
         if (bear.DetectPlayerMin())
         {
@@ -47,15 +47,13 @@ public class BearDetectedPlayerState : EnemyMoveState
         {
             stateMachine.ChangeState(bear.KnockbackState);
         }
-        else if (!bear.DetectPlayerMax())
-        {
-            stateMachine.ChangeState(bear.MoveState);
-        }
 
         if (DetectionLeaveTimer())
         {
             stateMachine.ChangeState(bear.MoveState);
         }
+
+        Debug.Log(DetectionLeaveTimer());
     }
 
     private bool DetectionLeaveTimer()

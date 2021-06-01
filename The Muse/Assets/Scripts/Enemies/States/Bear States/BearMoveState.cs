@@ -35,12 +35,10 @@ public class BearMoveState : EnemyMoveState
             bear.canFlip = false;
         }
 
-        //Debug.Log(detectedLedge);
-
-        //if (!detectedLedge && bear.canFlip)
-        //{
-        //    enemy.Flip();
-        //}
+        if (!detectedLedge && bear.canFlip)
+        {
+            enemy.Flip();
+        }
 
         if (bear.NeedsToJump())
         {

@@ -44,7 +44,7 @@ public class BanditDetectedState : EnemyMoveState
             enemy.Flip();
         }
 
-        if (peon.DetectPlayerMin())
+        if (peon.DetectPlayerMax())
         {
             trigger = true;
         }

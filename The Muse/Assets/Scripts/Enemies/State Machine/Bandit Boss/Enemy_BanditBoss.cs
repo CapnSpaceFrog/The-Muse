@@ -166,9 +166,10 @@ public class Enemy_BanditBoss : Enemy
 
     public void InstantiateProjectile()
     {
-            bossKnifePrefab.GetComponent<BanditProjectile>().direction = FacingDirection;
-            Instantiate(bossKnifePrefab, projectileSpawnPos.position, projectileSpawnPos.rotation);
-            threwKnifeTime = Time.time;
+        attackDetails[1] = transform.position.x;
+        bossKnifePrefab.GetComponent<BanditProjectile>().direction = FacingDirection;
+        Instantiate(bossKnifePrefab, projectileSpawnPos.position, projectileSpawnPos.rotation);
+        threwKnifeTime = Time.time;
     }
 
     public bool CanThrowKnife()

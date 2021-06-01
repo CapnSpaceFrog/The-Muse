@@ -12,12 +12,20 @@ public class PlayerDeadState : PlayerState
     {
         base.Enter();
 
-        player.SetVelocityZero();
+        player.gameObject.layer = 8;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        player.SetVelocityZero();
+
+        player.SetVelocityX(0);
+        player.SetVelocityY(-9);
+
+        if (player.CheckIfGrounded())
+        {
+            player.Anim.SetBool("dead", true);
+            player.StartCoroutine("DeathText");
+        }    
     }
 }

@@ -45,5 +45,9 @@ public class BanditBossAttackState : EnemyState
                 stateMachine.ChangeState(boss.DetectedState);
             }
         }
+        else if (!boss.DetectPlayerMin())
+        {
+            boss.StateMachine.ChangeState(boss.DetectedState);
+        }
     }
 }

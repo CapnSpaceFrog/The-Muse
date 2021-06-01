@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public PlayerAttackState SecondaryAttackState { get; private set; }
     public PlayerKnockbackState KnockbackState { get; private set; }
     public PlayerDeadState DeadState { get; private set; }
+    public PlayerWonState WonState { get; private set; }
 
 
     public PlayerData playerData;
@@ -27,8 +28,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public PlayerInventory Inventory { get; private set; }
     public PlayerHealthVisuals HealthSystem { get; private set; }
-    [SerializeField]
-    private LevelLoader transition;
+    public LevelLoader transition;
     #endregion
 
     #region Check Transforms
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     private GameObject spellIcon;
 
     public bool tookDamage { get; set; }
+    public bool hasWon;
     #endregion
 
     #region Unity Callback Functions
@@ -67,7 +68,8 @@ public class Player : MonoBehaviour
         KnockbackState = new PlayerKnockbackState(this, StateMachine, playerData, "knockback");
         PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", 1);
         SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", 2);
-        DeadState = new PlayerDeadState(this, StateMachine, playerData, "dead");
+        DeadState = new PlayerDeadState(this, StateMachine, playerData, "");
+        WonState = new PlayerWonState(this, StateMachine, playerData, "");
     }
 
     private void Start()
@@ -94,6 +96,11 @@ public class Player : MonoBehaviour
             spellIcon.SetActive(true);
         } else {
             spellIcon.SetActive(false);
+        }
+
+        if (hasWon)
+        {
+            SetVelocityZero();
         }
     }
 
@@ -183,13 +190,23 @@ public class Player : MonoBehaviour
     public void GameOver()
     {
         Physics2D.IgnoreLayerCollision(7, 3, true);
-        StartCoroutine(DeathText());
     }
 
     IEnumerator DeathText()
     {
         yield return new WaitForSeconds(1f);
         transition.GameOver();
+    }
+
+    public void GameWon()
+    {
+        StateMachine.ChangeState(WonState);
+    }
+
+    public IEnumerator DelayedWin()
+    {
+        yield return new WaitForSeconds(2f);
+        transition.GameWon();
     }
     #endregion
 }

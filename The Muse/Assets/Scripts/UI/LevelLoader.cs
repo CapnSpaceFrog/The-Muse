@@ -28,11 +28,16 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LevelLoadeDelay(2));
     }
 
+    public void GameWon()
+    {
+        StartCoroutine(LevelLoadeDelay(3));
+    }
+
     IEnumerator LevelLoadeDelay(int levelIndex)
     {
         transition.SetBool("start", true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(levelIndex);
     }
