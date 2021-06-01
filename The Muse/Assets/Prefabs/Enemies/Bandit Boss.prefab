@@ -178,7 +178,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2218746968246886898}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 81.72, y: 1.435, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
@@ -342,7 +342,6 @@ MonoBehaviour:
   bossKnifePrefab: {fileID: 8258982713416610854, guid: 6604804c20fc2a84fae67e20c7227b24, type: 3}
   attackFinished: 0
   hasNotAttemptedJump: 0
-  attemptedJump: 0
   canFlip: 0
 --- !u!1 &2218746968557668537
 GameObject:
@@ -398,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2218746968754386197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 0.153, z: 0}
+  m_LocalPosition: {x: -0.003, y: 0.214, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2218746968246886897}

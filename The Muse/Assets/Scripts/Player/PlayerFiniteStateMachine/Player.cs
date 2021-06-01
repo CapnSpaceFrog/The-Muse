@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     #region State Variables
     public PlayerStateMachine StateMachine { get; private set; }
-
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
@@ -42,7 +41,6 @@ public class Player : MonoBehaviour
     public int FacingDirection { get; private set; }
 
     public float lastSpellCast = -10;
-    public float spellCastCooldown = 7.5f;
 
     private Vector2 workspace;
 
@@ -136,7 +134,7 @@ public class Player : MonoBehaviour
     #region Check Functions
     public bool CheckIfCanSpellCast()
     {
-        if (lastSpellCast + spellCastCooldown > Time.time)
+        if (lastSpellCast + playerData.SpellCooldown > Time.time)
         {
             return false;
         }
@@ -147,12 +145,20 @@ public class Player : MonoBehaviour
     }
     public bool CheckIfGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+        if (Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround))
+        {
+            return true;
+        }
+        else if (Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsBox))
+        {
+            return true;
+        }
+        else return false;
     }
 
     public void CheckIfShouldFlip(int xInput)
     {
-        if (xInput != 0 && xInput != FacingDirection)
+        if (xInput != 0 && xInput != FacingDirection && !InputHandler.PausedGame)
         {
             Flip();
         }

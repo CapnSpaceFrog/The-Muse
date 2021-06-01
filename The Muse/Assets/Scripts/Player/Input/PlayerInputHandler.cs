@@ -110,12 +110,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started && !PausedGame)
         {
+            Time.timeScale = 0;
             PausedGame = true;
-            
             pauseMenu.SetActive(true);
         }
         else if (context.started && PausedGame)
         {
+            Time.timeScale = 1;
             PausedGame = false;
             pauseMenu.SetActive(false);
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: Boar Data
   m_EditorClassIdentifier: 
-  MaxHealth: 6
+  MaxHealth: 5
   JumpVelocity: 0
   JumpVelocityHigh: 0
   JumpVelocityLow: 0

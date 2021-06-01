@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: BanditPeon Data
   m_EditorClassIdentifier: 
-  MaxHealth: 16
-  JumpVelocity: 13.75
+  MaxHealth: 15
+  JumpVelocity: 14.25
   JumpVelocityHigh: 18
-  JumpVelocityLow: 13.75
+  JumpVelocityLow: 14.25
   JumpHeightMultiplier: 0.95
   GroundCheckRadius: 0.24
   JumpCheckRadius: 0.15
@@ -32,7 +32,7 @@ MonoBehaviour:
   KnockbackForceX: 4.15
   KnockbackForceY: 4.75
   MoveSpeed: 2.45
-  ChargeSpeed: 6.45
+  ChargeSpeed: 6.25
   WallCheckDistance: 0.95
   LedgeCheckDistance: 2.25
   PlayerCheckDistanceMin: 1.35

@@ -89,7 +89,6 @@ public class Enemy : MonoBehaviour
     public void UpdateHealth(float damageToTake)
     {
         currentHealth -= (int) damageToTake;
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

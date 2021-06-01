@@ -7,6 +7,34 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField]
     private Animator transition;
+    [SerializeField]
+    private GameObject menuButtons;
+    [SerializeField]
+    private GameObject creditsMenu;
+    [SerializeField]
+    private GameObject tutorialMenu;
+
+    private GameObject currentMenu;
+
+    public void CreditsMenu()
+    {
+        menuButtons.SetActive(false);
+        creditsMenu.SetActive(true);
+        currentMenu = creditsMenu;
+    }
+
+    public void HowToPlayMenu()
+    {
+        menuButtons.SetActive(false);
+        tutorialMenu.SetActive(true);
+        currentMenu = tutorialMenu;
+    }
+
+    public void BackButton()
+    {
+        currentMenu.SetActive(false);
+        menuButtons.SetActive(true);
+    }
 
     public void LoadMainMenu()
     {
@@ -36,6 +64,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LevelLoadeDelay(int levelIndex)
     {
         transition.SetBool("start", true);
+        Time.timeScale = 1;
 
         yield return new WaitForSeconds(2f);
 

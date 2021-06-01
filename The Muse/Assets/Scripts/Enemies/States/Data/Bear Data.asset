@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faf2a553158104abb3f6013c617bd2, type: 3}
   m_Name: Bear Data
   m_EditorClassIdentifier: 
-  MaxHealth: 12
+  MaxHealth: 10
   JumpVelocity: 5.55
   JumpVelocityHigh: 0
   JumpVelocityLow: 0

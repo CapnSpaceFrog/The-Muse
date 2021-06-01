@@ -9,6 +9,7 @@ public class PlayerData : ScriptableObject
     public int MaxHealth;
     public float LyreDamage;
     public float SpellDamage;
+    public float SpellCooldown;
 
     [Header("Move State")]
     public float movementVelocity = 10;
@@ -32,4 +33,5 @@ public class PlayerData : ScriptableObject
     [Header("Check Variables")]
     public float groundCheckRadius = 0.3f;
     public LayerMask whatIsGround;
+    public LayerMask whatIsBox;
 }

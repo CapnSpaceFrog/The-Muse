@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: playerData
   m_EditorClassIdentifier: 
   MaxHealth: 10
-  LyreDamage: 2
-  SpellDamage: 4
+  LyreDamage: 1
+  SpellDamage: 2
+  SpellCooldown: 3.25
   movementVelocity: 5.75
   jumpVelocity: 15
   amountOfJumps: 1
-  coyoteTime: 0.15
+  coyoteTime: 0.1
   variableJumpHeightMultiplier: 0.5
   knockbackVelocityY: 5.85
   knockbackVelocityX: 7.45
@@ -28,3 +29,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsBox:
+    serializedVersion: 2
+    m_Bits: 512

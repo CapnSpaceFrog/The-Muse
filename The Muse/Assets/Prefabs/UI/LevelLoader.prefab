@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 6497226360367444344}
+  menuButtons: {fileID: 0}
+  creditsMenu: {fileID: 0}
+  tutorialMenu: {fileID: 0}
 --- !u!1 &6497226358559551827
 GameObject:
   m_ObjectHideFlags: 0
