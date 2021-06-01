@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2ce5a67b1ecb74582feb0101071ae8, type: 3}
+  m_Name: playerData
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  LyreDamage: 2
+  SpellDamage: 4
+  movementVelocity: 5.75
+  jumpVelocity: 15
+  amountOfJumps: 1
+  coyoteTime: 0.2
+  variableJumpHeightMultiplier: 0.5
+  knockbackVelocityY: 5.85
+  knockbackVelocityX: 7.45
+  knockbackTimer: 0.3
+  test: 0
+  groundCheckRadius: 0.25
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
